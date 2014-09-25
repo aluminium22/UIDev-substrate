@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>galleryTitle</title>
+ <link rel="stylesheet" type="text/css" href="custom.css"/>
+</head>
+<!-- The first and great struggle was teaching myself about JSON. I have actually never used it. It was surprisingly easy to grasp, but I had to be thorough. 
+Then I tried several different attempts of getting my my objects worked out. Before I linked the JSON to the html, I copy and pasted the JSON into my script tag. This eliminated any chance that the errors I was getting were due to communication between the files. Next, I tried to find a way to efficiently display the information. I had a hard time getting things to display in the html, I would run the browser and nothing would show. 
+I did a whole bunch of trouble shooting, fine tuning syntax and mispellings.
+initially the Json was all set to a variable, once I finally got everything displaying (images and content and such) I cut the json back into it's folder and deleted the "var data = "portion. There was some trouble shooting to make sure it would still display. This consisted of me trying logical areas and narrowing down the problem. I usually start with the simple things, try, hope it works, if not move to the next.
+Once I finally found I could not get it to work without the JSON file right in my index.html file I found that my jquery library (because I wanted to get my info through jquery) was not updating from the link I had originally put in here, I presume it was do to locally testing, which is also what I read was the cause of my code not working in chrome, so I used Mozilla firefox browser, things went smoother from there. I took the whole library and put it in a file my src could reference. 
+I developed a loop to output all the images, this simplified and shortened my code, it did make some of the syntax harder for me to spot errors. I had to move p tags here and img tags there to finally get it to display right and I was good!  -->
+
+<body>
+
+<div id="placeholder"></div>
+
+  <script src="jquery-1.11.1.js"></script>
+  <script src="custom.js"></script>
+<script>
+ $.getJSON("gallery.json",{}, function( data ){
+    var output="<ul>";
+    for (var i in data.photos) {
+      output+="<li class='att'><p class='hs'>" 
+      + data.photos[i].attribution + "</p> <p class='hs'>" 
+      + data.photos[i].creationData + "</P><p class ='desc'>" 
+      + data.photos[i].description + "</p><h2 id='gal'>" 
+      + data.photos[i].title + "</h2><img class='gal' id='gal' src='" 
+      + data.photos[i].src + "'></li>";
+    }
+
+
+    output+="</ul>";
+
+    document.getElementById("placeholder").innerHTML=output;
+
+ });
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+#placeholder
+{
+	background-color: #ffffff;
+	overflow: hidden;
+}
+.gal
+{
+	height:150px;
+	text-align: center;
+	float:center;
+	margin:10px 10px 10px 10px;
+	padding:0px 4px 4px 0px;
+	background-color: #dddddd;
+}
+#gal
+{
+
+}
+.see
+{
+	height:35%;
+	text-align: center;
+	float:center;
+	margin:10px 10px 10px 10px;
+	padding:0px 4px 4px 0px;
+	background-color: #dddddd;
+}
+#placeholder li
+{
+	list-style: none;
+	display:inline-block;
+}
+.desc
+{
+	max-width: 250px;
+}
